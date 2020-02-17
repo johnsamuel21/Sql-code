@@ -15,3 +15,35 @@ select itemtype, category, round(avg(Price),2) "Average item price" from Item wh
 
 Assignment-49
 SELECT JOB, AVG(SAL) "Average Salary" FROM EMP WHERE JOB IN ('MANAGER', 'ANALYST') GROUP BY JOB HAVING AVG(SAL)>1500
+
+Assignment-50
+select job, deptno, avg(sal) "AVGSALARY" from Emp where deptno in (10,20) AND sal>2000 group by job, deptno having avg(sal)>2500
+
+Assignment-51
+SELECT EMPID, EMPNAME, SALARY,
+CASE 
+WHEN designation = 'Administrator' THEN SALARY * 1.10
+WHEN designation = 'Manager' THEN SALARY * 1.05
+WHEN designation = 'Billing Staff' THEN SALARY * 1.2
+WHEN designation = 'Security' THEN SALARY * 1.25
+ELSE SALARY * 1.02
+END "INCREASEDSALARY"
+FROM EmpDetails
+
+Assignment-52
+select empid, salary,
+case
+when salary<2500 then 'Class 3'
+when salary between 2500 and 5000 then 'Class 2'
+when salary>5000 then 'Class 1'
+End "SALGRADE"
+
+Assignment-53
+select itemcode, price "Old Price",
+case ITEMTYPE
+  when 'FMCG' then round(price*0.745,2)
+end "New Price" 
+from item where itemtype='FMCG' 
+
+Assignment-54
+select EmpId, EmpName, Worksin from EmpDetails WHERE DESIGNATION='Billing Staff'
