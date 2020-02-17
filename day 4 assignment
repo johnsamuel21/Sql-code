@@ -9,3 +9,9 @@ select pymtmode, count(*) pymtcount from Orders where to_char(Orderdate,'YYYY')<
 
 Assignment-47
 select sname,avg(quotedprice) "Average quoted price" from quotation where qstatus='Closed' group by sname having avg(quotedprice)>500 
+
+Assignment-48
+select itemtype, category, round(avg(Price),2) "Average item price" from Item where (itemtype='FMCG' or itemtype='Computer') group by itemtype, category having avg(Price)<2000
+
+Assignment-49
+SELECT JOB, AVG(SAL) "Average Salary" FROM EMP WHERE JOB IN ('MANAGER', 'ANALYST') GROUP BY JOB HAVING AVG(SAL)>1500
