@@ -1,5 +1,11 @@
 exercise 30
 SELECT PRODID, SUM(QUANTITY) QTY_SOLD FROM SALEDETAIL WHERE QUANTITY>1 GROUP BY PRODID HAVING COUNT(PRODID)>1
 
+Assignment-45
+SELECT ITEMCODE,AVG(QTYAVAILABLE) "Average Quantity" FROM RETAILSTOCK GROUP BY ITEMCODE HAVING AVG(QTYAVAILABLE)<75
 
+Assignment-46
+select pymtmode, count(*) pymtcount from Orders where to_char(Orderdate,'YYYY')<2015 group by pymtmode having count(*)>1
 
+Assignment-47
+select sname,avg(quotedprice) "Average quoted price" from quotation where qstatus='Closed' group by sname having avg(quotedprice)>500 
